@@ -26,7 +26,6 @@ function makeGalleryMarkup(gallery) {
     })
     .join("");
 }
-// console.log(makeGalleryMarkup);
 
 divGallery.addEventListener("click", onBigImage);
 
@@ -36,9 +35,14 @@ function onBigImage(evt) {
   if (evt.target.nodeName !== "IMG") {
     return;
   }
-  console.log(evt.target.src);
-  const bigImageUrl = evt.target.dataset.source;
+  // console.log(evt.target.src);
 
-  // const link = document.querySelector(".gallery__link");
-  // evt.target.src = evt.target.dataset.source;
+  const bigImageUrl = evt.target.dataset.source;
+  console.log(bigImageUrl);
+
+  const instance = basicLightbox.create(`
+    <img src=${bigImageUrl}>
+`);
+
+  instance.show();
 }
