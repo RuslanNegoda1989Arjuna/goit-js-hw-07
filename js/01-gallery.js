@@ -26,6 +26,19 @@ function makeGalleryMarkup(gallery) {
     })
     .join("");
 }
-console.log(makeGalleryMarkup);
+// console.log(makeGalleryMarkup);
 
-divGallery.addEventListener("click", on);
+divGallery.addEventListener("click", onBigImage);
+
+function onBigImage(evt) {
+  evt.preventDefault();
+
+  if (evt.target.nodeName !== "IMG") {
+    return;
+  }
+  console.log(evt.target.src);
+  const bigImageUrl = evt.target.dataset.source;
+
+  // const link = document.querySelector(".gallery__link");
+  // evt.target.src = evt.target.dataset.source;
+}
