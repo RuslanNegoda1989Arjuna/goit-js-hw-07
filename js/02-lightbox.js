@@ -35,7 +35,7 @@ function onBigImage(evt) {
 }
 
 var lightbox = new SimpleLightbox(".gallery a", {
-  captionData: "alt",
+  captionsData: "alt",
   captionDelay: 250,
   animationSpeed: 250,
 });
